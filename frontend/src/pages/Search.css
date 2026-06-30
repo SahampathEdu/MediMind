@@ -1,0 +1,37 @@
+.search-page { padding-bottom:80px; }
+
+.search-hero {
+  background:linear-gradient(160deg, var(--forest), var(--pine));
+  padding:64px 0 72px;
+}
+.search-hero .section-eyebrow { color:var(--sage); }
+.search-h1 {
+  font-size:clamp(2rem, 4.5vw, 3.2rem); color:white;
+  margin-bottom:16px; letter-spacing:-.02em;
+}
+.search-sub { font-size:18px; color:rgba(255,255,255,.72); max-width:520px; }
+
+.search-body { margin-top:-36px; }
+.search-form-card { box-shadow:var(--shadow-xl); margin-bottom:40px; }
+
+.risk-guide { margin-bottom:32px; }
+.risk-guide-title {
+  font-family:var(--font-body); font-size:16px; font-weight:800;
+  color:var(--slate); margin-bottom:16px; text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.risk-cards-row { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:16px; }
+.risk-card {
+  border:2px solid; border-radius:var(--r-md); padding:20px;
+}
+.risk-card-icon { font-size:24px; display:block; margin-bottom:8px; }
+.risk-card strong { font-size:15px; font-weight:800; display:block; margin-bottom:6px; }
+.risk-card p { font-size:14px; line-height:1.6; margin:0; opacity:.85; }
+
+.disclaimer-box {
+  display:flex; gap:14px; align-items:flex-start;
+  background:var(--foam); border:1.5px solid var(--mist);
+  border-radius:var(--r-md); padding:20px 24px;
+}
+.disclaimer-icon { font-size:22px; flex-shrink:0; }
+.disclaimer-box p { font-size:14px; color:var(--slate); line-height:1.7; margin:0; }

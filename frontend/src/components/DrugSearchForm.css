@@ -1,0 +1,139 @@
+.search-form-root { width:100%; }
+
+/* Drug row */
+.drugs-row {
+  display:grid; grid-template-columns:1fr auto 1fr;
+  align-items:end; gap:16px; margin-bottom:22px;
+}
+@media(max-width:640px) {
+  .drugs-row { grid-template-columns:1fr; }
+  .vs-badge { justify-self:center; transform:rotate(90deg); }
+}
+
+.drug-input-wrap { position:relative; }
+.drug-input-inner {
+  display:flex; align-items:flex-end; gap:12px;
+  background:var(--snow); border:2px solid var(--cloud);
+  border-radius:var(--r-md); padding:14px 16px;
+  transition:border-color .2s, box-shadow .2s, background .2s;
+}
+.drug-input-inner:focus-within {
+  border-color:var(--jade); background:var(--foam);
+  box-shadow:0 0 0 4px rgba(34,160,107,.1);
+}
+.drug-input-icon { font-size:20px; padding-bottom:2px; flex-shrink:0; }
+.drug-field {
+  border:none !important; outline:none !important;
+  box-shadow:none !important; background:transparent !important;
+  padding:0 !important; font-size:17px !important; font-weight:600;
+}
+.drug-field:focus { box-shadow:none !important; background:transparent !important; }
+
+.vs-badge {
+  font-family:var(--font-display); font-size:15px; font-weight:700;
+  color:var(--jade); background:var(--mist); border:2px solid var(--sage);
+  border-radius:var(--r-full); padding:8px 14px;
+  align-self:flex-end; margin-bottom:2px; flex-shrink:0;
+}
+
+/* Suggestions */
+.suggest-list {
+  position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:80;
+  background:var(--white); border:1.5px solid var(--cloud);
+  border-radius:var(--r-md); box-shadow:var(--shadow-lg);
+  max-height:220px; overflow-y:auto; list-style:none;
+  animation:fadeUp .15s var(--ease-out);
+}
+.suggest-item {
+  display:flex; align-items:center; gap:10px;
+  padding:12px 16px; font-size:15px; font-weight:500; color:var(--charcoal);
+  cursor:pointer; transition:background .12s;
+}
+.suggest-item:hover { background:var(--foam); color:var(--pine); }
+.suggest-icon { font-size:16px; }
+
+/* Patient info row */
+.patient-row {
+  display:flex; gap:16px; flex-wrap:wrap; margin-bottom:22px;
+}
+.patient-row .field { flex:1; min-width:140px; }
+.optional-tag {
+  font-size:10px; font-weight:600; color:var(--silver);
+  text-transform:none; letter-spacing:0;
+}
+
+/* Check button */
+.check-btn {
+  font-size:17px; padding:17px 28px; border-radius:var(--r-md);
+  margin-top:4px; letter-spacing:.02em;
+  box-shadow:0 6px 24px rgba(26,122,86,.28);
+}
+.check-btn:hover:not(:disabled) {
+  box-shadow:0 10px 32px rgba(26,122,86,.38);
+}
+
+/* Result card */
+.result-wrap { margin-top:32px; padding:28px 32px; }
+
+.result-head {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:14px; margin-bottom:26px;
+  padding-bottom:20px; border-bottom:1px solid rgba(0,0,0,.07);
+}
+.result-drugs { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.drug-chip {
+  background:rgba(255,255,255,.7); border:1.5px solid rgba(0,0,0,.1);
+  border-radius:var(--r-full); padding:6px 18px;
+  font-size:16px; font-weight:700; color:var(--ink); text-transform:capitalize;
+}
+.drug-plus { font-size:20px; color:var(--silver); font-weight:300; }
+
+/* Result body lines */
+.result-body { display:flex; flex-direction:column; gap:14px; }
+.result-line { display:flex; gap:16px; align-items:flex-start; }
+.result-line.align-top { align-items:center; }
+.rl-key {
+  font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.07em;
+  color:var(--stone); min-width:110px; padding-top:1px; flex-shrink:0;
+}
+.rl-val { font-size:15px; color:var(--charcoal); line-height:1.6; }
+.type-chip {
+  background:rgba(255,255,255,.6); border:1px solid rgba(0,0,0,.1);
+  border-radius:var(--r-sm); padding:3px 12px;
+  font-size:13px; font-weight:700; color:var(--charcoal); text-transform:capitalize;
+}
+.source-chip {
+  font-size:13px; font-weight:700; color:var(--pine);
+  background:var(--foam); border-radius:var(--r-sm); padding:3px 10px;
+  border:1px solid var(--mist);
+}
+
+/* Confidence */
+.conf-wrap { display:flex; align-items:center; gap:12px; }
+.conf-track {
+  height:10px; width:160px; background:rgba(0,0,0,.08);
+  border-radius:var(--r-full); overflow:hidden;
+}
+.conf-fill {
+  height:100%; border-radius:var(--r-full);
+  transition:width 1s var(--ease-out);
+}
+.conf-label { font-size:14px; font-weight:800; color:var(--charcoal); }
+
+/* Risk note */
+.risk-note-box {
+  display:flex; gap:12px; align-items:flex-start;
+  background:rgba(255,255,255,.6); border-radius:var(--r-sm);
+  padding:14px 16px; margin-top:4px;
+  border-left:3px solid var(--warn);
+}
+.risk-note-icon { font-size:18px; flex-shrink:0; }
+.risk-note-box p { font-size:14px; color:var(--charcoal); line-height:1.6; margin:0; }
+
+/* No interaction */
+.no-interaction-box {
+  display:flex; align-items:center; gap:16px;
+  padding:8px 0;
+}
+.no-int-icon { font-size:28px; }
+.no-interaction-box p { font-size:16px; color:var(--charcoal); margin:0; }
